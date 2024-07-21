@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+// .navigator{
+//     display: flex;
+//     align-items: center;
+//     color: aliceblue;
+//     background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+//     justify-content: space-around;
+// }
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 10px;
+}
+
+.button:hover {
+    background: linear-gradient(to right, darkblue, blue, lightblue);
+}

@@ -19,6 +19,10 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "ace-builds": "^1.35.3",
+    "json-formatter-js": "^2.5.17",
+    "jsonlint": "^1.6.3",
+    "jsonlint-mod": "^1.7.6",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

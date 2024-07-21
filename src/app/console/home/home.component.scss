@@ -1,0 +1,26 @@
+.Navigator
+{
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    //background-color: blue;
+    background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+    justify-content: space-around;
+}
+
+.json-validator-container {
+    width: 200px;
+    height: 100px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 120px;
+}
+
+.json-validator-container:hover {
+    background-color: lightblue;
+}

@@ -1,0 +1,29 @@
+<div class="sub-navigator">
+    <h2>JSON Validator</h2>
+</div>
+<div>
+    <div class="alltextarea">
+        <textarea [(ngModel)]="jsonString" rows="10" cols="30"></textarea>
+        <button class="button" (click)="validateJson()">Validate</button>
+        <button class="button" (click)="beautifyJson()">Beautify</button>
+        <button class="button" (click)="clearTextBox()">Clear</button>
+
+        <div *ngIf="validationResult !== null">
+            <p class="success" *ngIf="validationResult.valid">Valid JSON!</p>
+            <div *ngIf="successMessage == 'JSON has been beautified.'">
+                <h3>Beautified JSON</h3>
+                <pre class="json-output">{{ beautifiedJson }}</pre>
+            </div>
+            <p class="error" *ngIf="!validationResult.valid">Invalid JSON!</p>
+            <div *ngIf="validationResult.errors">
+                <p>Error Details:</p>
+                <pre class="error">{{ validationResult.errors }}</pre>
+            </div>
+        </div>
+
+    </div>
+</div>
+  
+
+  
+  

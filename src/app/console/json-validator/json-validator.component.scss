@@ -1,0 +1,58 @@
+.sub-navigator{
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+    justify-content: space-around;
+}
+.json-editor-container {
+    display: flex;
+  }
+  
+
+ .alltextarea{
+    width: 70%;
+    margin: 70px;
+    margin-left: 170px;
+ }
+
+  .error {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Light red border */
+    border-radius: 10px; /* Curved sides */
+    padding: 10px;
+    margin: 10px 0;
+    }
+
+    .success {
+        background-color: #d4edda; /* Light green background */
+        color: #155724; /* Dark green text */
+        border: 1px solid #c3e6cb; /* Light green border */
+        border-radius: 10px; /* Curved sides */
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    textarea {
+        background-color: #e3f1f1;
+        font-size: 16px; /* Medium font size */
+        padding: 10px; /* Add some padding for better readability */
+        border-radius: 5px; /* Optional: to match button styling */
+        border: 1px solid #ccc; /* Optional: border color */
+        resize: vertical; /* Allow vertical resizing */
+        width: 100%; /* Make it responsive */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+    }
+
+    .json-output{
+        background-color: #C3C3BC;
+        font-size: 16px; /* Medium font size */
+        padding: 10px; /* Add some padding for better readability */
+        border-radius: 5px; /* Optional: to match button styling */
+        border: 1px solid #ccc; /* Optional: border color */
+        resize: vertical; /* Allow vertical resizing */
+        width: 100%; /* Make it responsive */
+        box-sizing: border-box; /* Ensure padding and border are included in the width */
+    }
+  
