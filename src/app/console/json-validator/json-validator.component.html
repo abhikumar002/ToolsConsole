@@ -11,8 +11,13 @@
         <div *ngIf="validationResult !== null">
             <p class="success" *ngIf="validationResult.valid">Valid JSON!</p>
             <div *ngIf="successMessage == 'JSON has been beautified.'">
-                <h3>Beautified JSON</h3>
-                <pre class="json-output">{{ beautifiedJson }}</pre>
+                <div class="beautified-json-container">
+                    <h3>Beautified JSON</h3>
+                        <pre class="json-output" [innerHTML]="beautifiedJsonHtml"></pre>
+                        <button class="copy-button" (click)="copyToClipboard()">
+                            <mat-icon>content_copy</mat-icon>
+                        </button>
+                </div>
             </div>
             <p class="error" *ngIf="!validationResult.valid">Invalid JSON!</p>
             <div *ngIf="validationResult.errors">

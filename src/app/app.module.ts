@@ -9,6 +9,9 @@ import { JsonValidatorComponent } from './console/json-validator/json-validator.
 import { JsonBeautifierComponent } from './console/json-beautifier/json-beautifier.component';
 import { JsonValidationService } from './Services/json-validation.service';
 import { HomeComponent } from './console/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { HomeComponent } from './console/home/home.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [JsonValidationService],
   bootstrap: [AppComponent]

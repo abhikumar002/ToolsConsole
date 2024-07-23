@@ -8,6 +8,20 @@
 .json-editor-container {
     display: flex;
   }
+
+  .json-validator-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    background-color: #f0f8ff; /* Light background for better visibility */
+}
+
+.input-container {
+    margin-top: 20px;
+}
   
 
  .alltextarea{
@@ -45,14 +59,74 @@
         box-sizing: border-box; /* Ensure padding and border are included in the width */
     }
 
+    .button, .copy-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-right: 10px; /* Space between buttons */
+    }
+    
+    .copy-button {
+        background-color: green;
+    }
+    
+    // .button:hover, .copy-button:hover {
+    //     background: linear-gradient(to right, darkblue, blue, lightblue);
+    // }
+
+    .beautified-json-container {
+        position: relative;
+    }
+
+    .copy-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px 10px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .copy-button mat-icon {
+        font-size: 20px;
+        color: grey;
+    }
+
     .json-output{
-        background-color: #C3C3BC;
-        font-size: 16px; /* Medium font size */
-        padding: 10px; /* Add some padding for better readability */
-        border-radius: 5px; /* Optional: to match button styling */
-        border: 1px solid #ccc; /* Optional: border color */
-        resize: vertical; /* Allow vertical resizing */
-        width: 100%; /* Make it responsive */
-        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        background-color: #f8f9fa; /* Light background */
+        font-size: 16px;
+        color: red; /* Dark text */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px;
+        overflow-x: auto; /* Scrollbar for overflow */
+        white-space: pre-wrap; /* Preserve whitespace formatting */
+        margin-top: 20px; /* Space between JSON output and buttons */
+    }
+
+    .key {
+        color: lightcoral; /* Light red color for keys */
+    }
+    
+    .string {
+        color: darkblue; /* Dark blue color for values */
+    }
+    
+    .number {
+        color: green;
+    }
+    
+    .boolean {
+        color: purple;
+    }
+    
+    .null {
+        color: gray;
     }
   
