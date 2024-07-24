@@ -3,7 +3,7 @@
 </div>
 <div>
     <div class="alltextarea">
-        <textarea [(ngModel)]="jsonString" rows="10" cols="30"></textarea>
+        <div #editor class="editor"></div>
         <button class="button" (click)="validateJson()">Validate</button>
         <button class="button" (click)="beautifyJson()">Beautify</button>
         <button class="button" (click)="clearTextBox()">Clear</button>

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { JsonValidationService } from '../../Services/json-validation.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+//import * as ace from 'ace-builds';
+//declare const ace: any; 
+//import 'ace-builds/src-noconflict/mode-json_custom'; 
 
 @Component({
   selector: 'app-json-validator',
@@ -9,9 +12,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 
-export class JsonValidatorComponent {
+export class JsonValidatorComponent implements AfterViewInit {
+  @ViewChild('editor', { static: true }) private editor: ElementRef<HTMLElement>;
   jsonString: string = '';
   beautifiedJson: string = '';
+  private aceEditor: any;
   beautifiedJsonHtml: string = '';
   successMessage: string = '';
   validationResult: { valid: boolean, errors?: any } | null = null;
@@ -22,6 +27,30 @@ export class JsonValidatorComponent {
     private jsonValidationService: JsonValidationService,
     private snackBar: MatSnackBar
   ) {}
+
+  ngAfterViewInit() {
+    // Load Ace Editor dynamically
+    import('ace-builds/src-noconflict/ace').then(aceModule => {
+      // Load the custom mode script dynamically
+      import('src/assets/ace/json-custom-mode').then(() => {
+        this.aceEditor = aceModule.default.edit(this.editor.nativeElement);
+        this.aceEditor.setTheme('ace/theme/Venom'); // Use a dark theme
+        this.aceEditor.session.setMode('ace/mode/json_custom'); // Set the custom mode
+        this.aceEditor.session.setValue(this.jsonString);
+
+        this.aceEditor.setOptions({
+          fontSize: '14px',
+          lineHeight: 1.2,
+        });
+
+        this.aceEditor.session.setUseWrapMode(true);
+
+        this.aceEditor.session.on('change', () => {
+          this.jsonString =this.aceEditor.getValue();
+        });
+      });
+    });
+  }
 
   // ngOnInit() {
   //   this.updateLineNumbers();
@@ -54,6 +83,9 @@ export class JsonValidatorComponent {
   }
 
   clearTextBox() {
+    if (this.aceEditor) {
+      this.aceEditor.setValue(''); // Clear the editor content
+    }
     this.jsonString = '';
     this.beautifiedJson = '';
     this.successMessage = '';

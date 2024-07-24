@@ -49,15 +49,42 @@
     }
 
     textarea {
-        background-color: #e3f1f1;
-        font-size: 16px; /* Medium font size */
-        padding: 10px; /* Add some padding for better readability */
-        border-radius: 5px; /* Optional: to match button styling */
-        border: 1px solid #ccc; /* Optional: border color */
-        resize: vertical; /* Allow vertical resizing */
-        width: 100%; /* Make it responsive */
-        box-sizing: border-box; /* Ensure padding and border are included in the width */
+        flex: 1;
+        background-color: #6272a4;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 0 5px 5px 0;
+        border: 1px solid #ccc;
+        border-left: none; /* Remove left border to align with line-numbers */
+        resize: none;
+        box-sizing: border-box;
+        overflow: auto;
+        line-height: 1.5; /* Match line height with .line-numbers */
     }
+
+    .json-editor-container {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 20px 0;
+        position: relative;
+      }
+      
+      .line-numbers {
+        padding: 10px 0;
+        background-color: #f0f8ff;
+        color: #aaa;
+        text-align: right;
+        user-select: none;
+        line-height: 1.5;
+        border-right: 1px solid #ccc;
+        margin-right: -1px; /* Compensate for the border of textarea */
+      }
+      
+      .line-numbers pre {
+        margin: 0;
+        padding: 0 10px;
+      }
 
     .button, .copy-button {
         padding: 10px 20px;
@@ -110,23 +137,46 @@
         margin-top: 20px; /* Space between JSON output and buttons */
     }
 
-    .key {
-        color: lightcoral; /* Light red color for keys */
-    }
-    
-    .string {
-        color: darkblue; /* Dark blue color for values */
-    }
-    
-    .number {
-        color: green;
-    }
-    
-    .boolean {
-        color: purple;
-    }
-    
-    .null {
-        color: gray;
-    }
+
+    .editor {
+        height: 300px; /* Adjust height as needed */
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 5px; /* Rounded corners */
+        margin: 20px 0; /* Margin around the editor */
+        font-family: 'Courier New', Courier, monospace; /* Custom font */
+      }
+      
+      .ace_editor {
+        background-color: #DEF0EF;
+        font-size: 14px; /* Default font size */
+        line-height: 1.6; /* Default line height */
+      }
+      
+      .ace_editor .ace_content {
+        background-color: #a28686; /* Light background */
+      }
+
+      .ace_editor .ace_text-layer {
+        color: #a46b6b; /* Set default text color */
+      }
+      
+      .ace_editor .ace_keyword {
+        color: #ff79c6; /* Set color for keywords */
+      }
+      
+      .ace_editor .ace_string {
+        color: #50fa7b; /* Set color for strings */
+      }
+      
+      .ace_editor .ace_comment {
+        color: #6272a4; /* Set color for comments */
+      }
+
+      .ace_editor .ace_string.key.json {
+        color: #ff0000; /* Red color for keys */
+      }
+      
+      .ace_editor .ace_string.value.json {
+        color: #0000ff; /* Blue color for values */
+      }
   
