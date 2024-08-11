@@ -12,4 +12,8 @@ export class HomeComponent {
   navigateToJsonValidator() {
     this.router.navigate(['/json-validator']);
   }
+
+  navigateToXmlValidator() {
+    this.router.navigate(['/xml-validator']);
+  }
 }

@@ -7,13 +7,14 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class JsonValidationService {
+export class XmlValidatorService {
   private aceEditor: ace.Ace.Editor | undefined;
   private errorMarkerId: number | null = null; 
   hasError: boolean = false;
   authToken:string;
   http: any;
-  Jsonstring:string;
+  Jsonstring : string;
+  keyCount?: number;
   correctedJson: any;
 
   constructor() {}
@@ -21,16 +22,38 @@ export class JsonValidationService {
   setEditorInstance(editor: ace.Ace.Editor) {
     this.aceEditor = editor;
   }
+  
 
-  validateJson(jsonString: string): { valid: boolean, errors?: string } {
+  validateXml(jsonString: string): { valid: boolean, errors?: string } {
     try {
-      const parsedJson = jsonlint.parse(jsonString);
       this.clearErrorMarkers();
-      let keyCount = 0;
-      if (typeof parsedJson === 'object' && parsedJson !== null) {
-        keyCount = Object.keys(parsedJson).length;
+      let parsedJson;
+      try {
+        parsedJson = JSON.parse(jsonString);
+      } catch (e) {
+        // If JSON parsing fails, try XML parsing
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(jsonString, 'application/xml');
+    
+        const parseError = xmlDoc.getElementsByTagName('parsererror');
+        if (parseError.length > 0) {
+          throw new Error(parseError[0].textContent || 'Error parsing XML');
+        }
+    
+        let keyCount = 0;
+        if (xmlDoc.documentElement && xmlDoc.documentElement.nodeName !== 'parsererror') {
+          keyCount = xmlDoc.documentElement.childNodes.length;
+        }
+    
+        return { valid: true, keyCount: keyCount } as any;
       }
-      return { valid: true };
+    
+      if (typeof parsedJson === 'object' && parsedJson !== null) {
+        const keyCount = Object.keys(parsedJson).length;
+        return { valid: true, keyCount: keyCount } as any;
+      } else {
+        throw new Error('Invalid JSON');
+      }
     } catch (e) {
       this.highlightError(e.message);
       const errorDetails = this.extractErrorDetails(e.message, jsonString);
@@ -137,4 +160,43 @@ export class JsonValidationService {
       return '<span class="' + cls + '">' + match + '</span>';
     });
   }
+
+  generateWithAI() {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.authToken}`);
+    this.http.post('/api/json/generate-with-ai', { jsonString: this.Jsonstring }, { headers })
+      .subscribe((response: any) => {
+        this.correctedJson = response.correctedJson;
+      }, (error) => {
+        console.error('Error generating JSON with AI:', error);
+      });
+  }
+
+  formatXml(xml: string): string {
+    const PADDING = '  '; // Define your preferred indentation
+    const reg = /(>)(<)(\/*)/g;
+    let formatted = '';
+    let pad = 0;
+  
+    xml = xml.replace(reg, '$1\r\n$2$3');
+    xml.split('\r\n').forEach((node) => {
+      let indent = 0;
+      if (node.match(/.+<\/\w[^>]*>$/)) {
+        indent = 0;
+      } else if (node.match(/^<\/\w/)) {
+        if (pad !== 0) {
+          pad -= 1;
+        }
+      } else if (node.match(/^<\w[^>]*[^/]>.*$/)) {
+        indent = 1;
+      } else {
+        indent = 0;
+      }
+  
+      formatted += PADDING.repeat(pad) + node + '\r\n';
+      pad += indent;
+    });
+  
+    return formatted.trim();
+  }
+  
 }

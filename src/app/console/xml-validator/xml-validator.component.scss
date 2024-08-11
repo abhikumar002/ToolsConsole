@@ -1,0 +1,245 @@
+.sub-navigator {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background: linear-gradient(to right, #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+    justify-content: space-around;
+}
+
+.json-editor-container {
+    display: flex;
+}
+
+.json-validator-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    background-color: #f0f8ff;
+    /* Light background for better visibility */
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+
+.alltextarea {
+    width: 70%;
+    margin: 70px;
+    margin-left: 170px;
+    text-shadow: #050505;
+}
+
+.error {
+    background-color: #f8d7da;
+    /* Light red background */
+    color: #721c24;
+    /* Dark red text */
+    border: 1px solid #f5c6cb;
+    /* Light red border */
+    border-radius: 10px;
+    /* Curved sides */
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.success {
+    background-color: #d4edda;
+    /* Light green background */
+    color: #155724;
+    /* Dark green text */
+    border: 1px solid #c3e6cb;
+    /* Light green border */
+    border-radius: 10px;
+    /* Curved sides */
+    padding: 10px;
+    margin: 10px 0;
+}
+
+textarea {
+    flex: 1;
+    background-color: #6272a4;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ccc;
+    border-left: none;
+    /* Remove left border to align with line-numbers */
+    resize: none;
+    box-sizing: border-box;
+    overflow: auto;
+    line-height: 1.5;
+    /* Match line height with .line-numbers */
+}
+
+.json-editor-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+}
+
+.line-numbers {
+    padding: 10px 0;
+    background-color: #f0f8ff;
+    color: #aaa;
+    text-align: right;
+    user-select: none;
+    line-height: 1.5;
+    border-right: 1px solid #ccc;
+    margin-right: -1px;
+    /* Compensate for the border of textarea */
+}
+
+.line-numbers pre {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.button,
+.copy-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 10px;
+    /* Space between buttons */
+}
+
+.copy-button {
+    background-color: green;
+}
+
+// .button:hover, .copy-button:hover {
+//     background: linear-gradient(to right, darkblue, blue, lightblue);
+// }
+
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.copy-button mat-icon {
+    font-size: 20px;
+    color: grey;
+}
+
+.json-output {
+    background-color: #f8f9fa;
+    /* Light background */
+    font-size: 16px;
+    color: red;
+    /* Dark text */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 5px;
+    /* Rounded corners */
+    padding: 10px;
+    overflow-x: auto;
+    /* Scrollbar for overflow */
+    white-space: pre-wrap;
+    /* Preserve whitespace formatting */
+    margin-top: 20px;
+    /* Space between JSON output and buttons */
+}
+
+
+.editor {
+    height: 300px;
+    /* Adjust height as needed */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin: 20px 0;
+    /* Margin around the editor */
+    font-family: 'Courier New', Courier, monospace;
+    /* Custom font */
+}
+
+.ace_editor {
+    background-color: #DEF0EF;
+    font-size: 14px;
+    /* Default font size */
+    line-height: 1.6;
+    /* Default line height */
+}
+
+.ace_editor .ace_content {
+    background-color: #a28686;
+    /* Light background */
+}
+
+.ace_editor .ace_text-layer {
+    color: #a46b6b;
+    /* Set default text color */
+}
+
+.ace_editor .ace_keyword {
+    color: #ff79c6;
+    /* Set color for keywords */
+}
+
+.ace_editor .ace_string {
+    color: #50fa7b;
+    /* Set color for strings */
+}
+
+.ace_editor .ace_comment {
+    color: #6272a4;
+    /* Set color for comments */
+}
+
+.ace_editor .ace_string.key.json {
+    color: #ff0000;
+    /* Red color for keys */
+}
+
+.ace_editor .ace_string.value.json {
+    color: #0000ff;
+    /* Blue color for values */
+}
+
+.ace_error-marker {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.3);
+    /* Light red background */
+    z-index: 20;
+    /* Ensure it's above other content */
+}
+
+.json-key {
+    color: blue;
+}
+
+.json-value {
+    color: green;
+}
+
+.json-null {
+    color: red;
+}
+
+.beautified-json-container {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.copy-button {
+    margin-top: 10px;
+}

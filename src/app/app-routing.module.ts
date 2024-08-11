@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { JsonValidatorComponent } from './console/json-validator/json-validator.component';
+import { XmlValidatorComponent } from './console/xml-validator/xml-validator.component';
 import { HomeComponent } from './console/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'json-validator', component: JsonValidatorComponent },
+  { path: 'xml-validator', component: XmlValidatorComponent },
   { path: '**', redirectTo: '' }
 ];
 

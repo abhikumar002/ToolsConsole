@@ -12,13 +12,16 @@ import { HomeComponent } from './console/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { XmlValidatorComponent } from './console/xml-validator/xml-validator.component';
+import { XmlValidatorService } from './Services/xml-validator.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     JsonValidatorComponent,
     JsonBeautifierComponent,
-    HomeComponent
+    HomeComponent,
+    XmlValidatorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSnackBarModule,
     MatIconModule
   ],
-  providers: [JsonValidationService],
+  providers: [JsonValidationService, XmlValidatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

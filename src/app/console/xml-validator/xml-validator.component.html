@@ -1,0 +1,36 @@
+<div class="sub-navigator">
+    <h2>XML Validator</h2>
+</div>
+<div>
+    <div class="alltextarea">
+        <div #editor class="editor"></div>
+        <button class="button" (click)="validateXml()">Validate</button>
+        <button class="button" (click)="beautifyXml()">Beautify</button>
+        <button class="button" (click)="clearTextBox()">Clear</button>
+        <!-- <button class="button" (click)="generateWithAI()">Generate with AI</button> -->
+
+        <div *ngIf="validationResult !== null">
+            <p class="success" *ngIf="validationResult.valid">Valid XML!</p>
+            <div *ngIf="successMessage == 'XML has been beautified.'">
+                <div class="beautified-json-container">
+                    <h3>Beautified XML</h3>
+                        <pre class="json-output" [innerHTML]="beautifiedXmlHtml"></pre>
+                        <button class="copy-button" (click)="copyToClipboard()">
+                            <mat-icon>content_copy</mat-icon>
+                        </button>
+                </div>
+            </div>
+            <p class="error" *ngIf="!validationResult.valid">Invalid XML!</p>
+            <div *ngIf="validationResult.errors">
+                <p>Error Details:</p>
+                <pre class="error">{{ validationResult.errors }}</pre>
+                <!-- <button (click)="generateWithAI()">Generate with AI</button> -->
+            </div>
+        </div>
+
+    </div>
+</div>
+  
+
+  
+  
