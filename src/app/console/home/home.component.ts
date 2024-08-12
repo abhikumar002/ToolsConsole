@@ -16,4 +16,8 @@ export class HomeComponent {
   navigateToXmlValidator() {
     this.router.navigate(['/xml-validator']);
   }
+
+  navigateToPasswordGenerator() {
+    this.router.navigate(['/password-generator']);
+  }
 }

@@ -28,6 +28,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/xml-validator']);
   }
 
+  navigateToPasswordGenerator() {
+    this.router.navigate(['/password-generator']);
+  }
+
   ngOnInit() {
     this.jsonDataService.getData().subscribe(response => {
       this.data = response;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JsonBeautifierComponent } from './json-beautifier.component';
+import { PasswordGeneratorComponent } from './password-generator.component';
 
-describe('JsonBeautifierComponent', () => {
-  let component: JsonBeautifierComponent;
-  let fixture: ComponentFixture<JsonBeautifierComponent>;
+describe('PasswordGeneratorComponent', () => {
+  let component: PasswordGeneratorComponent;
+  let fixture: ComponentFixture<PasswordGeneratorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JsonBeautifierComponent ]
+      declarations: [ PasswordGeneratorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JsonBeautifierComponent);
+    fixture = TestBed.createComponent(PasswordGeneratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
