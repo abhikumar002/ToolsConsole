@@ -20,4 +20,8 @@ export class HomeComponent {
   navigateToPasswordGenerator() {
     this.router.navigate(['/password-generator']);
   }
+
+  navigateTobaseEncoderDecoder() {
+    this.router.navigate(['/base-encoder-decoder']);
+  }
 }

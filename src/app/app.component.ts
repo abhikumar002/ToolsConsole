@@ -32,6 +32,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/password-generator']);
   }
 
+  navigateTobaseEncoderDecoder() {
+    this.router.navigate(['/base-encoder-decoder']);
+  }
+
   ngOnInit() {
     this.jsonDataService.getData().subscribe(response => {
       this.data = response;

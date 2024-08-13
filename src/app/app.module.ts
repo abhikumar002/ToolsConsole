@@ -15,6 +15,8 @@ import { XmlValidatorComponent } from './console/xml-validator/xml-validator.com
 import { XmlValidatorService } from './Services/xml-validator.service';
 import { PasswordGeneratorComponent } from './console/password-generator/password-generator.component';
 import { PasswordGeneratorService } from './Services/password-generator.service';
+import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base-encoder-decoder.component';
+import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { PasswordGeneratorService } from './Services/password-generator.service'
     HomeComponent,
     XmlValidatorComponent,
     PasswordGeneratorComponent,
-    PasswordGeneratorComponent
+    PasswordGeneratorComponent,
+    BaseEncoderDecoderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { PasswordGeneratorService } from './Services/password-generator.service'
     MatSnackBarModule,
     MatIconModule
   ],
-  providers: [JsonValidationService, XmlValidatorService, PasswordGeneratorService],
+  providers: [JsonValidationService, XmlValidatorService, PasswordGeneratorService, BaseEncoderDecoderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

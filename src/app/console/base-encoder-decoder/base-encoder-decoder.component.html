@@ -1,0 +1,35 @@
+<div class="sub-navigator">
+    <h2>Base Encoder / Decoder</h2>
+</div>
+<div class="alltextarea">
+    <div class="form-group">
+      <label for="base-select">Select Base:</label>
+      <select id="base-select" [(ngModel)]="selectedBase" (change)="encodeInput()">
+        <option value="base64">Base64</option>
+        <option value="base32">Base32</option>
+        <option value="base16">Base16</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <textarea class = "editor" [(ngModel)]="inputText" placeholder="Enter text to Encode/Decode"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <button class="button" (click)="encodeInput()">Encode</button>
+      <button class="button" (click)="decodeInput()">Decode</button>
+    </div>
+
+    <div *ngIf="outputText">
+        <div class="beautified-json-container">
+          <h3>Output:</h3>
+          <pre class="json-output">{{ outputText }}</pre>
+          <button class="copy-button" (click)="copyToClipboard()">
+            <mat-icon>content_copy</mat-icon>
+          </button>
+        </div>
+    </div>
+
+</div>
+  
+  
