@@ -36,6 +36,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/base-encoder-decoder']);
   }
 
+  navigateToQRGenerator() {
+    this.router.navigate(['/qr-generator']);
+  }
+
   ngOnInit() {
     this.jsonDataService.getData().subscribe(response => {
       this.data = response;

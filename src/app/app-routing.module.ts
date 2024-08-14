@@ -5,6 +5,7 @@ import { XmlValidatorComponent } from './console/xml-validator/xml-validator.com
 import { PasswordGeneratorComponent } from './console/password-generator/password-generator.component';
 import { HomeComponent } from './console/home/home.component';
 import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base-encoder-decoder.component';
+import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'xml-validator', component: XmlValidatorComponent },
   { path: 'password-generator', component: PasswordGeneratorComponent },
   { path: 'base-encoder-decoder', component: BaseEncoderDecoderComponent },
+  { path: 'qr-generator', component: QrGeneratorComponent },
   { path: '**', redirectTo: '' }
 ];
 

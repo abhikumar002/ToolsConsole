@@ -24,4 +24,8 @@ export class HomeComponent {
   navigateTobaseEncoderDecoder() {
     this.router.navigate(['/base-encoder-decoder']);
   }
+
+  navigateToQRGenerator() {
+    this.router.navigate(['/qr-generator']);
+  }
 }

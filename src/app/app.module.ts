@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +19,8 @@ import { PasswordGeneratorComponent } from './console/password-generator/passwor
 import { PasswordGeneratorService } from './Services/password-generator.service';
 import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base-encoder-decoder.component';
 import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.service';
-
+import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
+import { QrGeneratorService } from './Services/qr-generator.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.servi
     XmlValidatorComponent,
     PasswordGeneratorComponent,
     PasswordGeneratorComponent,
-    BaseEncoderDecoderComponent
+    BaseEncoderDecoderComponent,
+    QrGeneratorComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +39,18 @@ import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.servi
     FormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    ZXingScannerModule,
+    NgxQRCodeModule
   ],
-  providers: [JsonValidationService, XmlValidatorService, PasswordGeneratorService, BaseEncoderDecoderService],
+  providers: [
+    JsonValidationService,
+    XmlValidatorService,
+    PasswordGeneratorService,
+    BaseEncoderDecoderService,
+    QrGeneratorService
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

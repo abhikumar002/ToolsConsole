@@ -1,0 +1,36 @@
+<div class="sub-navigator">
+    <h2>QR Reader / Generator</h2>
+</div>
+<div>
+  <div>
+    <div class="alltextarea"> 
+      <div class="form-group">
+        <textarea class="editor" [(ngModel)]="qrData" (ngModelChange)="onTextChange()" placeholder="Enter text to Generate QR"></textarea>
+      </div>
+      <button class="button" (click)="generateQRCode()">Generate QR Code</button>
+      <button class="button" (click)="downloadQRCode()" *ngIf="showQRCode">Download QR Code</button>
+      <div class="qr-code" *ngIf="showQRCode">
+        <ngx-qrcode id="qrcodeElement" [value]="qrData" *ngIf="showQRCode"></ngx-qrcode>
+      </div>
+      <br>
+      <br><br><br><br><br>
+     <!-- Add the QR code scanner -->
+     <button class="button" (click)="toggleScanner()">Read QR Scanner</button>
+     <div *ngIf="showScanner">
+       <zxing-scanner
+         (scanSuccess)="onCodeResult($event)"
+         (scanError)="onScanError($event)">
+       </zxing-scanner>
+     </div>
+     <div>
+        <br>
+       <input class="button" type="file" (change)="onFileSelected($event)" accept="image/*">
+       
+       <div *ngIf="qrResultString">
+         <h3>Scanned QR Code Data:</h3>
+         <p>{{ qrResultString }}</p>
+       </div>
+     </div>
+    </div>
+  </div>
+</div>
