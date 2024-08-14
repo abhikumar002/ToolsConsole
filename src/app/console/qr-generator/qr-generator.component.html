@@ -4,6 +4,7 @@
 <div>
   <div>
     <div class="alltextarea"> 
+      <h2>Generate QR Code</h2>
       <div class="form-group">
         <textarea class="editor" [(ngModel)]="qrData" (ngModelChange)="onTextChange()" placeholder="Enter text to Generate QR"></textarea>
       </div>
@@ -13,24 +14,29 @@
         <ngx-qrcode id="qrcodeElement" [value]="qrData" *ngIf="showQRCode"></ngx-qrcode>
       </div>
       <br>
+      <hr>
       <br><br><br><br><br>
-     <!-- Add the QR code scanner -->
-     <button class="button" (click)="toggleScanner()">Read QR Scanner</button>
-     <div *ngIf="showScanner">
-       <zxing-scanner
-         (scanSuccess)="onCodeResult($event)"
-         (scanError)="onScanError($event)">
-       </zxing-scanner>
-     </div>
-     <div>
-        <br>
-       <input class="button" type="file" (change)="onFileSelected($event)" accept="image/*">
-       
-       <div *ngIf="qrResultString">
-         <h3>Scanned QR Code Data:</h3>
-         <p>{{ qrResultString }}</p>
-       </div>
-     </div>
+      <!-- Add the QR code scanner -->
+      <!-- <button class="button" (click)="toggleScanner()">Toggle QR Scanner</button> -->
+      <div *ngIf="showScanner">
+        <zxing-scanner
+          (scanSuccess)="onCodeResult($event)"
+          (scanError)="onScanError($event)">
+        </zxing-scanner>
+      </div>
+      <div>
+        <h2>Read QR Code</h2>
+        <input #fileInput class="button" type="file" (change)="onFileSelected($event)" accept="image/*">
+        <div *ngIf="qrResultString">
+            <div class="beautified-json-container">
+              <h3>Scanned QR Code Data:</h3>
+              <pre class="json-output">{{ qrResultString }}</pre>
+              <button class="copy-button" (click)="copyToClipboard()">
+                <mat-icon>content_copy</mat-icon>
+              </button>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
