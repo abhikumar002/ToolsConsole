@@ -54,3 +54,20 @@ $ToolsConsole-theme: mat-light-theme($ToolsConsole-primary, $ToolsConsole-accent
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.sub-navigator{
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+    justify-content: space-around;
+}
+
+.alltextarea{
+    width: 70%;
+    margin: 70px;
+    text-shadow: #050505;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+ }

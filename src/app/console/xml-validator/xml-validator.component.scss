@@ -1,11 +1,3 @@
-.sub-navigator {
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    background: linear-gradient(to right, #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
-    justify-content: space-around;
-}
-
 .json-editor-container {
     display: flex;
 }
@@ -26,12 +18,6 @@
 }
 
 
-.alltextarea {
-    width: 70%;
-    margin: 70px;
-    margin-left: 170px;
-    text-shadow: #050505;
-}
 
 .error {
     background-color: #f8d7da;

@@ -1,11 +1,3 @@
-.sub-navigator{
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
-    justify-content: space-around;
-}
-
 .button, .copy-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -38,12 +30,6 @@
     padding-inline: initial;
   }
 
-  .alltextarea{
-    width: 70%;
-    margin: 70px;
-    margin-left: 170px;
-    text-shadow: #050505;
- }
 
  .editor {
     height: 200px; /* Adjust height as needed */
