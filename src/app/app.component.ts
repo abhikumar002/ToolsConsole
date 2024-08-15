@@ -44,6 +44,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/barcode-generator']);
   }
 
+  navigateTotextminifier() {
+    this.router.navigate(['/text-minifier']);
+  }
+
   ngOnInit() {
     this.jsonDataService.getData().subscribe(response => {
       this.data = response;

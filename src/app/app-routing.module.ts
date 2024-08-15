@@ -7,6 +7,7 @@ import { HomeComponent } from './console/home/home.component';
 import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base-encoder-decoder.component';
 import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
 import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-generator.component';
+import { TextMinifierComponent } from './console/text-minifier/text-minifier.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'base-encoder-decoder', component: BaseEncoderDecoderComponent },
   { path: 'qr-generator', component: QrGeneratorComponent },
   { path: 'barcode-generator', component: BarcodeGeneratorComponent },
+  { path: 'text-minifier', component:TextMinifierComponent},
   { path: '**', redirectTo: '' }
 ];
 

@@ -1,0 +1,27 @@
+<div class="sub-navigator">
+    <h2>Text Minifier</h2>
+</div>
+<div>
+    <div class="alltextarea">
+        <div class="form-group">
+            <textarea [(ngModel)]="inputText" rows="10" cols="50" placeholder="Enter your text here"></textarea>
+            <div>
+              <label><input type="checkbox" [(ngModel)]="removeSpaces"> Remove Spaces</label>
+              <label><input type="checkbox" [(ngModel)]="removeTabs"> Remove Tabs</label>
+              <label><input type="checkbox" [(ngModel)]="removeLines"> Remove Lines</label>
+            </div>
+            <br>
+            <button class="button" (click)="minifyText()">Minify Text</button>
+        </div> 
+        
+        <div *ngIf="minifiedText">
+            <div class="beautified-json-container">
+              <h3>Minified Text:</h3>
+              <pre class="json-output">{{ minifiedText }}</pre>
+              <button class="copy-button" (click)="copyToClipboard()">
+                <mat-icon>content_copy</mat-icon>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>

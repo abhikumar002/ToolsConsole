@@ -32,4 +32,8 @@ export class HomeComponent {
   navigateTobarcodeGenerator() {
     this.router.navigate(['/barcode-generator']);
   }
+
+  navigateTotextminifier() {
+    this.router.navigate(['/text-minifier']);
+  }
 }

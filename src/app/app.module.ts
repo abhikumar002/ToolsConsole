@@ -23,6 +23,9 @@ import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.servi
 import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
 import { QrGeneratorService } from './Services/qr-generator.service';
 import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-generator.component';
+import { TextMinifierComponent } from './console//text-minifier/text-minifier.component';
+import { TextMinifierService } from './Services/text-minifier.service';
+import { BarcodeGeneratorService } from './Services/barcode-generator.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-g
     PasswordGeneratorComponent,
     BaseEncoderDecoderComponent,
     QrGeneratorComponent,
-    BarcodeGeneratorComponent
+    BarcodeGeneratorComponent,
+    TextMinifierComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,9 @@ import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-g
     XmlValidatorService,
     PasswordGeneratorService,
     BaseEncoderDecoderService,
-    QrGeneratorService
+    QrGeneratorService,
+    BarcodeGeneratorService,
+    TextMinifierService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
