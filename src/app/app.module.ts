@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { NgxBarcodeModule } from 'ngx-barcode';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base
 import { BaseEncoderDecoderService } from './Services/base-encoder-decoder.service';
 import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
 import { QrGeneratorService } from './Services/qr-generator.service';
+import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-generator.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { QrGeneratorService } from './Services/qr-generator.service';
     PasswordGeneratorComponent,
     PasswordGeneratorComponent,
     BaseEncoderDecoderComponent,
-    QrGeneratorComponent
+    QrGeneratorComponent,
+    BarcodeGeneratorComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { QrGeneratorService } from './Services/qr-generator.service';
     MatSnackBarModule,
     MatIconModule,
     ZXingScannerModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    NgxBarcodeModule
   ],
   providers: [
     JsonValidationService,

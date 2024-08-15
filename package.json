@@ -34,6 +34,7 @@
     "jsonlint": "^1.6.3",
     "jsonlint-mod": "^1.7.6",
     "ngx-ace-wrapper": "^17.0.0",
+    "ngx-barcode": "^0.3.0",
     "prismjs": "^1.29.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

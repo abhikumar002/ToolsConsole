@@ -28,4 +28,8 @@ export class HomeComponent {
   navigateToQRGenerator() {
     this.router.navigate(['/qr-generator']);
   }
+
+  navigateTobarcodeGenerator() {
+    this.router.navigate(['/barcode-generator']);
+  }
 }

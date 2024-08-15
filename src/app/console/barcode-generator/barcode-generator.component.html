@@ -1,0 +1,31 @@
+<div class="sub-navigator">
+    <h2>BarCode Reader / Generator</h2>
+</div>
+<div>
+    <div class="alltextarea">
+        <h2>BarCode Generator</h2>
+        <div class="form-group">
+            <textarea class="editor" [(ngModel)]="barcodeData" (ngModelChange)="onTextChange()" placeholder="Enter text to Generate BarCode"></textarea>
+        </div>
+        <button class="button" (click)="generateBarcode()">Generate Barcode</button>
+        <button  class="button" *ngIf="generatedBarcode" (click)="downloadBarcode()">Download Barcode</button>
+        <div #barcodeElement>
+            <ngx-barcode *ngIf="showQRCode" id="qrcodeElement" [bc-value]="generatedBarcode" bc-format="CODE128"></ngx-barcode>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div class="alltextarea">
+        <h2>BarCode Reader</h2>
+        <input #fileInput class="button" type="file" (change)="onFileChange($event)" accept="image/*">
+        <div *ngIf="scannedResult">
+        <div class="beautified-json-container">
+          <h3>Scanned BarCode Data:</h3>
+          <pre class="json-output">{{ scannedResult }}</pre>
+          <button class="copy-button" (click)="copyToClipboard()">
+            <mat-icon>content_copy</mat-icon>
+          </button>
+        </div>
+    </div>
+    </div>
+</div>

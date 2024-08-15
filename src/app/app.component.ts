@@ -40,6 +40,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/qr-generator']);
   }
 
+  navigateTobarcodeGenerator() {
+    this.router.navigate(['/barcode-generator']);
+  }
+
   ngOnInit() {
     this.jsonDataService.getData().subscribe(response => {
       this.data = response;

@@ -1,0 +1,152 @@
+.sub-navigator{
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background: linear-gradient(to right,  #00008B 0%, #0000FF 50%, #ADD8E6 98%, #FFFFFF 100%);
+    justify-content: space-around;
+}
+
+.button, .copy-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 10px; /* Space between buttons */
+}
+
+/* Container for the Base Encoder/Decoder form */
+.base-encoder-decoder {
+    max-width: 500px; /* Adjust the width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #DEF0EF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Centering form groups with proper spacing */
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .text-box {
+    padding-inline: initial;
+  }
+
+  .alltextarea{
+    width: 70%;
+    margin: 70px;
+    margin-left: 170px;
+    text-shadow: #050505;
+ }
+
+ .editor {
+    height: 200px; /* Adjust height as needed */
+    border: 1px solid #000000; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin around the editor */
+    font-family: 'Courier New', Courier, monospace; /* Custom font */
+  }
+  
+  /* Select dropdown styling */
+  select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: white;
+  }
+  
+  /* Textarea styling for input and output */
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1rem;
+    background-color: #DEF0EF;
+    resize: vertical; /* Allows vertical resizing */
+  }
+  
+  .button:hover, .copy-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Output textarea styling */
+  .output-container {
+    height: 200px; /* Adjust height as needed */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin around the editor */
+    font-family: 'Courier New', Courier, monospace; /* Custom font */
+  }
+  
+  /* Additional styling for the output area */
+  .json-output {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+  
+  /* Icon button for copying content */
+  .copy-button {
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .copy-button mat-icon {
+    font-size: 20px;
+    color: grey;
+  }
+  
+  .copy-button:hover mat-icon {
+    color: black;
+  }
+
+  .beautified-json-container {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .qr-code {
+    text-align: right;
+    margin-left: 30%;
+  }
+
+  .qr-code ngx-qrcode {
+    display: inline-block;
+  }
+
+  zxing-scanner {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+

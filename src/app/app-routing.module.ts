@@ -6,6 +6,7 @@ import { PasswordGeneratorComponent } from './console/password-generator/passwor
 import { HomeComponent } from './console/home/home.component';
 import { BaseEncoderDecoderComponent } from './console/base-encoder-decoder/base-encoder-decoder.component';
 import { QrGeneratorComponent } from './console/qr-generator/qr-generator.component';
+import { BarcodeGeneratorComponent } from './console/barcode-generator/barcode-generator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'password-generator', component: PasswordGeneratorComponent },
   { path: 'base-encoder-decoder', component: BaseEncoderDecoderComponent },
   { path: 'qr-generator', component: QrGeneratorComponent },
+  { path: 'barcode-generator', component: BarcodeGeneratorComponent },
   { path: '**', redirectTo: '' }
 ];
 
